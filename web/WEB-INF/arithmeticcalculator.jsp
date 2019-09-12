@@ -19,7 +19,7 @@
             <input type="submit" value="+" formaction="?action=add">
             <input type="submit" value="-" formaction="?action=sub">
             <input type="submit" value="*" formaction="?action=multi">
-            <input type="submit" value="%" formaction="?action=divi">
+            <input type="submit" value="%" formaction="?action=modu">
             <br>
             <br>
             <span>${answer}</span>

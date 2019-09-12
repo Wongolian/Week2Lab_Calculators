@@ -33,12 +33,12 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         String fvalue = request.getParameter("first");
         String lvalue = request.getParameter("last");
         String action = request.getParameter("action");
- 
+
         if (fvalue.equals("") && lvalue.equals("")) {
             request.setAttribute("answer", "Result: ---");
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
             return;
-            
+
         } else if (fvalue.equals("") || lvalue.equals("")) {
             request.setAttribute("fvalue", fvalue);
             request.setAttribute("lvalue", lvalue);
@@ -54,18 +54,26 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         switch (action) {
             case "add":
                 num3 = num1 + num2;
+                request.setAttribute("fvalue", fvalue);
+                request.setAttribute("lvalue", lvalue);
                 request.setAttribute("answer", "Result: " + num3);
                 break;
             case "sub":
                 num3 = num1 - num2;
+                request.setAttribute("fvalue", fvalue);
+                request.setAttribute("lvalue", lvalue);
                 request.setAttribute("answer", "Result: " + num3);
                 break;
             case "multi":
                 num3 = num1 * num2;
+                request.setAttribute("fvalue", fvalue);
+                request.setAttribute("lvalue", lvalue);
                 request.setAttribute("answer", "Result: " + num3);
                 break;
-            case "divi":
-                num3 = num1 / num2;
+            case "modu":
+                num3 = num1 % num2;
+                request.setAttribute("fvalue", fvalue);
+                request.setAttribute("lvalue", lvalue);
                 request.setAttribute("answer", "Result: " + num3);
                 break;
             default:
