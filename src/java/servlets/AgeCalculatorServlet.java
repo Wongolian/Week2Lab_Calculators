@@ -33,7 +33,7 @@ public class AgeCalculatorServlet extends HttpServlet {
 
         if (birthday == null || birthday.equals("")) {
 
-            request.setAttribute("error", " You must give your current age");
+            request.setAttribute("answer", " You must give your current age");
 
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
             return;
@@ -42,9 +42,9 @@ public class AgeCalculatorServlet extends HttpServlet {
         int bage = Integer.parseInt(birthday);
         bage++;
 
-        request.setAttribute("nbday", bage);
+        request.setAttribute("answer", "Your age will be " + bage);
 
-        getServletContext().getRequestDispatcher("/WEB-INF/ageDone.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
     }
 }// </editor-fold>
 
